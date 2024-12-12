@@ -4,7 +4,11 @@ docker containers for developing ros1 and ros2 python applications
 ### Installing ros via pip
 you can actually install some ros packages via pip by specifying a custom index
 ```bash
-pip install rosbag --extra-index-url https://rospypi.github.io/simple/
+pip install rosbag cv_bridge --extra-index-url https://rospypi.github.io/simple/
+
+CFLAGS="-I$(brew --prefix lz4)/include" \
+LDFLAGS="-L$(brew --prefix lz4)/lib" \
+pip install roslz4 --extra-index-url https://rospypi.github.io/simple/
 ```
 Its not clear how well this works. This might be useful for local development.
 
